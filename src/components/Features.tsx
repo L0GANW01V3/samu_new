@@ -36,14 +36,14 @@ const Features = () => {
   ];
 
   return (
-    <section id="features" className="py-24 bg-gradient-dark">
+    <section id="features" className="py-24 bg-white rounded-tl-[4rem] rounded-tr-[4rem]">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 scroll-reveal">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl text-secondary font-bold mb-6">
             Premium 
             <span className="bg-gradient-premium bg-clip-text text-transparent [background-clip:text] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]"> Features</span>
           </h2>
-          <p className="text-xl text-secondary-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-secondary max-w-2xl mx-auto">
             Discover the exceptional capabilities that set us apart from the competition.
           </p>
         </div>

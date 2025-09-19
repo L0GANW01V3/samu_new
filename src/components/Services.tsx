@@ -56,14 +56,14 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-24 bg-gradient-dark">
+    <section id="services" className="py-24 bg-white rounded-bl-[4rem] rounded-br-[4rem]">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 scroll-reveal">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-secondary">
             Premium 
             <span className="bg-gradient-premium bg-clip-text text-transparent [background-clip:text] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]"> Services</span>
           </h2>
-          <p className="text-xl text-secondary-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-secondary max-w-2xl mx-auto">
             Comprehensive solutions designed to elevate your business to new heights.
           </p>
         </div>
