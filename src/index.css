@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Premium Dark & Golden Design System - All colors MUST be HSL */
+
+@layer base {
+  :root {
+    /* Premium Dark Theme */
+    --background: 220 13% 8%;
+    --foreground: 210 20% 88%;
+
+    --card: 220 13% 10%;
+    --card-foreground: 210 20% 88%;
+
+    --popover: 220 13% 10%;
+    --popover-foreground: 210 20% 88%;
+
+    /* Golden Primary */
+    --primary: 45 90% 65%;
+    --primary-foreground: 220 13% 8%;
+
+    /* Premium Secondary - More subtle colors */
+    --secondary: 220 13% 15%;
+    --secondary-foreground: 210 15% 75%;
+
+    --muted: 220 13% 12%;
+    --muted-foreground: 210 10% 65%;
+
+    /* Golden Accent */
+    --accent: 38 85% 55%;
+    --accent-foreground: 220 13% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 88%;
+
+    --border: 220 13% 18%;
+    --input: 220 13% 15%;
+    --ring: 45 90% 65%;
+
+    --radius: 0.75rem;
+
+    /* Premium Gradients */
+    --gradient-premium: linear-gradient(135deg, hsl(45 90% 65%), hsl(38 85% 55%));
+    --gradient-dark: linear-gradient(180deg, hsl(220 13% 8%), hsl(220 13% 12%));
+    --gradient-card: linear-gradient(145deg, hsl(220 13% 10%), hsl(220 13% 15%));
+
+    /* Premium Shadows */
+    --shadow-premium: 0 25px 50px -12px hsl(45 90% 65% / 0.25);
+    --shadow-glow: 0 0 40px hsl(45 90% 65% / 0.3);
+    --shadow-elegant: 0 10px 30px -5px hsl(220 13% 5% / 0.5);
+
+    /* Animation Timings */
+    --transition-premium: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s ease-out;
+
+    /* Sidebar Premium Colors */
+    --sidebar-background: 220 13% 10%;
+    --sidebar-foreground: 210 20% 88%;
+    --sidebar-primary: 45 90% 65%;
+    --sidebar-primary-foreground: 220 13% 8%;
+    --sidebar-accent: 220 13% 15%;
+    --sidebar-accent-foreground: 210 15% 75%;
+    --sidebar-border: 220 13% 18%;
+    --sidebar-ring: 45 90% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@layer utilities {
+
+  /* Premium Gradients */
+  .bg-gradient-premium {
+    background: var(--gradient-premium);
+  }
+
+  .bg-gradient-dark {
+    background: var(--gradient-dark);
+  }
+
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  /* Premium Shadows */
+  .shadow-premium {
+    box-shadow: var(--shadow-premium);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  /* Premium Animations */
+  .transition-premium {
+    transition: var(--transition-premium);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  /* Scroll Reveal Animation */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Premium Hover Effects */
+  .hover-lift {
+    @apply transition-premium hover:scale-105 hover:shadow-glow;
+  }
+
+  .hover-golden {
+    @apply transition-premium hover:text-primary;
+  }
+
+  .hover-golden-glow:hover {
+    text-shadow: 0 0 10px hsl(45 90% 65% / 0.8),
+      0 0 20px hsl(45 90% 65% / 0.6);
+  }
+}
