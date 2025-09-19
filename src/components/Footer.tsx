@@ -37,7 +37,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-white border-t border-border rounded-tl-[4rem] rounded-tr-[4rem]">
+    <footer className="bg-slate-50 border-t border-border rounded-tl-[4rem] rounded-tr-[4rem]">
       <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Brand Section */}

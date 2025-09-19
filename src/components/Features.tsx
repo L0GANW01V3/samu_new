@@ -1,77 +1,163 @@
-import { Card, CardContent } from '@/components/ui/card';
-import { Zap, Shield, Palette, Rocket, Globe, Crown } from 'lucide-react';
+import { useEffect } from "react";
 
-const Features = () => {
-  const features = [
-    {
-      icon: Zap,
-      title: 'Lightning Fast',
-      description: 'Optimized performance that delivers results at the speed of light.',
-    },
-    {
-      icon: Shield,
-      title: 'Enterprise Security',
-      description: 'Bank-level security protocols to protect your valuable data.',
-    },
-    {
-      icon: Palette,
-      title: 'Premium Design',
-      description: 'Crafted with attention to detail and luxurious aesthetics.',
-    },
-    {
-      icon: Rocket,
-      title: 'Scalable Solutions',
-      description: 'Built to grow with your business, from startup to enterprise.',
-    },
-    {
-      icon: Globe,
-      title: 'Global Reach',
-      description: 'Worldwide infrastructure ensuring optimal performance everywhere.',
-    },
-    {
-      icon: Crown,
-      title: 'VIP Support',
-      description: 'White-glove support from our team of expert professionals.',
-    },
+const Clients = () => {
+  const logos = [
+    "https://dummyimage.com/200x200/000/fff.png&text=Aryam+Sustainables",
+    "https://dummyimage.com/200x200/000/fff.png&text=Property+Planners",
+    "https://dummyimage.com/200x200/000/fff.png&text=CocoLife",
+    "https://dummyimage.com/200x200/000/fff.png&text=PW",
+    "https://dummyimage.com/200x200/000/fff.png&text=Pirajees",
+    "https://dummyimage.com/200x200/000/fff.png&text=Aurus+Infra",
+    "https://dummyimage.com/200x200/000/fff.png&text=Tirupati",
+    "https://dummyimage.com/200x200/000/fff.png&text=Unacademy",
+    "https://dummyimage.com/200x200/000/fff.png&text=Royal+Kidz",
   ];
 
+  useEffect(() => {
+    const style = document.createElement("style");
+    style.innerHTML = `
+      @keyframes scroll-up {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-50%); }
+      }
+
+      @keyframes scroll-down {
+        0% { transform: translateY(-50%); }
+        100% { transform: translateY(0); }
+      }
+
+      .marquee {
+        overflow: hidden;
+        position: relative;
+        height: 480px; /* taller for bigger logos */
+      }
+
+      .marquee-content {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .scroll-up {
+        animation: scroll-up 20s linear infinite;
+      }
+
+      .scroll-down {
+        animation: scroll-down 20s linear infinite;
+      }
+
+      .marquee-content:hover {
+        animation-play-state: paused;
+      }
+
+      .logo-item {
+        flex: 0 0 auto;
+        margin: 0.1rem; /* very minimal gap */
+      }
+
+      .logo-item img {
+        max-height: 140px; /* bigger logos */
+        width: auto;
+        border-radius: 1rem; /* rounded corners */
+        object-fit: cover;
+        display: block;
+      }
+    `;
+    document.head.appendChild(style);
+  }, []);
+
   return (
-    <section id="features" className="py-24 bg-white rounded-tl-[4rem] rounded-tr-[4rem]">
+    <section
+      id="clients"
+      className="py-24 bg-white rounded-t-[4rem] relative overflow-hidden"
+    >
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16 scroll-reveal">
-          <h2 className="text-4xl md:text-5xl text-secondary font-bold mb-6">
-            Premium 
-            <span className="bg-gradient-premium bg-clip-text text-transparent [background-clip:text] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]"> Features</span>
-          </h2>
-          <p className="text-xl text-secondary max-w-2xl mx-auto">
-            Discover the exceptional capabilities that set us apart from the competition.
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <Card 
-              key={index} 
-              className="bg-gradient-card border-border hover-lift scroll-reveal group"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-gradient-premium rounded-full flex items-center justify-center mx-auto mb-6 group-hover:shadow-glow transition-premium">
-                  <feature.icon className="h-8 w-8 text-primary-foreground" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          {/* Logos: desktop */}
+          <div className="scroll-reveal relative hidden lg:block">
+            <div className="absolute -top-4 -left-4 w-36 h-36 bg-gradient-premium rounded-full opacity-30 -z-10"></div>
+
+            <div className="grid grid-cols-3 gap-0">
+              {[0, 1, 2].map((col) => (
+                <div key={col} className="marquee">
+                  <div
+                    className={`marquee-content ${col === 1 ? "scroll-up" : "scroll-down"
+                      }`}
+                  >
+                    {[...logos, ...logos].map((logo, i) => (
+                      <div
+                        key={`${col}-${i}`}
+                        className="logo-item flex items-center justify-center"
+                      >
+                        <img
+                          src={logo}
+                          alt={`Client ${i + 1}`}
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">
-                  {feature.title}
-                </h3>
-                <p className="text-secondary-foreground">
-                  {feature.description}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
+              ))}
+            </div>
+          </div>
+
+          {/* Right side: text */}
+          <div className="scroll-reveal">
+            <h2 className="text-4xl text-secondary md:text-5xl font-bold">
+              Our{" "}
+              <span className="bg-gradient-premium bg-clip-text text-transparent [background-clip:text] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] mb-4">
+                Clients
+              </span>
+            </h2>
+            <p className="text-xl text-secondary max-w-2xl mx-auto mb-6">
+              Powering growth for businesses across industries.
+            </p>
+
+            {/* Logos: mobile */}
+            <div className="block lg:hidden mb-8">
+              <div className="grid grid-cols-3 gap-0">
+                {[0, 1, 2].map((col) => (
+                  <div key={col} className="marquee">
+                    <div
+                      className={`marquee-content ${col === 1 ? "scroll-up" : "scroll-down"
+                        }`}
+                    >
+                      {[...logos, ...logos].map((logo, i) => (
+                        <div
+                          key={`${col}-m-${i}`}
+                          className="logo-item flex items-center justify-center"
+                        >
+                          <img
+                            src={logo}
+                            alt={`Client ${i + 1}`}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <p className="text-lg text-secondary mb-4 leading-relaxed">
+              At Mage Marketer, we believe that every brand has a unique journey
+              to growth, and our mission is to guide you through it with
+              carefully designed strategies. We combine deep market research,
+              innovative tools, and creative storytelling to craft campaigns
+              that resonate with your audience and drive measurable impact.
+            </p>
+            <p className="text-lg text-secondary leading-relaxed">
+              Our approach is not just about running ads or creating content —
+              it’s about weaving together the right mix of SEO, social media,
+              design, and analytics into a cohesive roadmap. With Mage Marketer
+              as your partner, you gain more than a service provider — you gain
+              a growth curator dedicated to unlocking your full potential.
+            </p>
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
-export default Features;
+export default Clients;

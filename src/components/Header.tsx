@@ -52,7 +52,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="text-2xl font-bold bg-gradient-premium bg-clip-text text-transparent [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]">
-            Samayu Solutions
+            Samayu
           </div>
 
           {/* Desktop Nav */}
