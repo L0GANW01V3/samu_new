@@ -43,7 +43,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <div className="text-3xl font-bold bg-gradient-premium bg-clip-text text-transparent [background-clip:text] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] mb-4">
-              Samayu
+              Samayu Solutions
             </div>
             <p className="text-secondary mb-6 leading-relaxed">
               Premium digital solutions that elevate your business to new heights. 
@@ -91,7 +91,7 @@ const Footer = () => {
         <div className="border-t border-border mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-secondary text-sm">
-              © 2024 Samayu. All rights reserved. Crafted with premium quality.
+              © 2024 Samayu Solutions. All rights reserved. Crafted with premium quality.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-secondary hover-secondary transition-smooth text-sm">
