@@ -37,15 +37,15 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-dark border-t border-border">
+    <footer className="bg-white border-t border-border rounded-tl-[4rem] rounded-tr-[4rem]">
       <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <div className="text-3xl font-bold bg-gradient-premium bg-clip-text text-transparent [background-clip:text] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] mb-4">
-              Luxura
+              Samayu
             </div>
-            <p className="text-secondary-foreground mb-6 leading-relaxed">
+            <p className="text-secondary mb-6 leading-relaxed">
               Premium digital solutions that elevate your business to new heights. 
               We craft exceptional experiences with unparalleled attention to detail.
             </p>
@@ -68,7 +68,7 @@ const Footer = () => {
           {/* Links Sections */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h3 className="font-semibold text-foreground mb-4">
+              <h3 className="font-semibold text-secondary mb-4">
                 {category}
               </h3>
               <ul className="space-y-3">
@@ -76,7 +76,7 @@ const Footer = () => {
                   <li key={index}>
                     <a
                       href={link.href}
-                      className="text-secondary-foreground hover-golden transition-smooth"
+                      className="text-secondary hover-secondary transition-smooth"
                     >
                       {link.name}
                     </a>
@@ -90,17 +90,17 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t border-border mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-secondary-foreground text-sm">
-              © 2024 Luxura. All rights reserved. Crafted with premium quality.
+            <p className="text-secondary text-sm">
+              © 2024 Samayu. All rights reserved. Crafted with premium quality.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-secondary-foreground hover-golden transition-smooth text-sm">
+              <a href="#" className="text-secondary hover-secondary transition-smooth text-sm">
                 Privacy
               </a>
-              <a href="#" className="text-secondary-foreground hover-golden transition-smooth text-sm">
+              <a href="#" className="text-secondary hover-secondary transition-smooth text-sm">
                 Terms
               </a>
-              <a href="#" className="text-secondary-foreground hover-golden transition-smooth text-sm">
+              <a href="#" className="text-secondary hover-secondary transition-smooth text-sm">
                 Cookies
               </a>
             </div>
