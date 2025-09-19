@@ -7,15 +7,15 @@ const Stats = () => {
   ];
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden rounded-[4rem] -z-10">
+    <section className="py-24 relative overflow-hidden rounded-[4rem] -z-10">
       <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-premium rounded-full opacity-50 animate-float"></div>
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 scroll-reveal">
-          <h2 className="text-4xl text-secondary md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl text-white md:text-5xl font-bold mb-6">
             Trusted by
             <span className="bg-gradient-premium bg-clip-text text-transparent [background-clip:text] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]"> Thousands</span>
           </h2>
-          <p className="text-xl text-secondary max-w-2xl mx-auto">
+          <p className="text-xl text-white max-w-2xl mx-auto">
             Our track record speaks for itself. Join the elite companies that trust us.
           </p>
         </div>
@@ -31,7 +31,7 @@ const Stats = () => {
                 <div className="text-5xl md:text-6xl font-bold bg-gradient-premium bg-clip-text text-transparent [background-clip:text] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] mb-4 group-hover:scale-110 transition-premium">
                   {stat.number}{stat.suffix}
                 </div>
-                <div className="text-lg text-secondary">
+                <div className="text-lg text-white">
                   {stat.label}
                 </div>
 
